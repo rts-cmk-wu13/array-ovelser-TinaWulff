@@ -133,6 +133,24 @@ console.log("Opgave 7b " + fruitsArray.indexOf('Blåbær'));
 dogsArray.splice(3, 1);
 console.log("Opgave 8 ", dogsArray);
 
+// EKSTRA OPGAVE
+// METHOD : reduce
+
+//console.log("Ekstraopgave ", reduce(numbersArray))
+
+
+// const initialValue = 0;
+const sumWithInitial = numbersArray.reduce(
+  (accumulator, currentValue) => accumulator + currentValue // <-- Kommaet her
+  //accumulator: Holder den løbende sum, der bliver opdateret med hver iteration.
+  //currentValue: Er det nuværende element i numbersArray, der bliver lagt til summen.
+  //initialValue,
+);
+
+console.log("Ekstraopgave",(sumWithInitial));
+// Expected output: 10
+
+
 
 
 }) // ends DOMContentLoaded
