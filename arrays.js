@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let dogsArray = ["Barney", "Molly", "Baxter", "Polly", "Buddy", "Suki", "Watson"];
 
     /// OPGAVE 1
+    // METHOD : filter
 /*
     let newNumbers = numbersArray.filter(num => num > 20)
     console.log("Opgave 1", newNumbers)
@@ -16,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
         function bigNumbers(value) {
             return value > 20;
         }
-
-        const newNumbers = numbersArray.filter(bigNumbers);
+ 
+        let newNumbers = numbersArray.filter(bigNumbers);
 
         console.log("Opgave 1", newNumbers);
 
@@ -65,8 +66,10 @@ console.log("opgave 3a " + (dogsArray.includes('Trixie')));
 
 // OPGAVE 3b
 
-console.log("opgave 3b " + (dogsArray.includes('Baxter')));
+//console.log("opgave 3b " + (dogsArray.includes('Baxter')));
 
+let hasBaxter = dogsArray.some((dog) => dog == "Baxter" );
+console.log("opgave 3b " + hasBaxter);
 //OPGAVE 4
  //METHOD : find
 
@@ -104,9 +107,9 @@ console.log("opgave 4b", catsArray.find(cat => cat === "Salem"));
 // OPGAVE 5
 // METHOD : flatMap / map
 
-let newNumberArray = numbersArray.flatMap((x) => [x * 3]);
+let newNumberArray = numbersArray.map((x) => [x * 3]);
 
-console.log("opgave 5", newNumberArray);
+console.log("opgave 5", newNumberArray); 
 
 
 //OPGAVE 6
@@ -130,8 +133,14 @@ console.log("Opgave 7b " + fruitsArray.indexOf('Blåbær'));
 // OPGAVE 8
 
 
-dogsArray.splice(3, 1);
-console.log("Opgave 8 ", dogsArray);
+ //let modifiedDogs = dogsArray.splice(3, 1); //same same som nedenunder, findes på anden måde
+ let modifiedDogs = dogsArray.splice(dogsArray.indexOf("Polly"), 1);
+console.log("Opgave 8 ", modifiedDogs);
+
+// En anden metode hvor den faktisk viser det gældende array
+let dogsModified = dogsArray.filter(dog => dog != "Polly")
+console.log(dogsModified);
+
 
 // EKSTRA OPGAVE
 // METHOD : reduce
@@ -140,17 +149,15 @@ console.log("Opgave 8 ", dogsArray);
 
 
 // const initialValue = 0;
-const sumWithInitial = numbersArray.reduce(
-  (accumulator, currentValue) => accumulator + currentValue // <-- Kommaet her
+const sum = numbersArray.reduce(
+  (accumulator, currentValue) => accumulator + currentValue //,initialValue
+);
   //accumulator: Holder den løbende sum, der bliver opdateret med hver iteration.
   //currentValue: Er det nuværende element i numbersArray, der bliver lagt til summen.
-  //initialValue,
-);
-
-console.log("Ekstraopgave",(sumWithInitial));
-// Expected output: 10
+  //initialValue (ikke nødvendig her, men er startværdien der skal lægges til)
 
 
+console.log("Ekstraopgave",(sum));
 
 
 }) // ends DOMContentLoaded
