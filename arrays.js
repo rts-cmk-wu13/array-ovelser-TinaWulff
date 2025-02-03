@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let fruitsArray = ["Banana", "Orange", "Pineapple", "Mango", "Plum", "Apricot"]
     let numbersArray = [12, 4, 45, 17, 2, 26, 7, 55, 48, 32, 21]
 
-
+    let dogsArray = ["Barney", "Molly", "Baxter", "Polly", "Buddy", "Suki", "Watson"];
 
     /// OPGAVE 1
 /*
@@ -59,7 +59,7 @@ console.log("Opgave 3b", ...)
 
 // OPGAVE 3a
 
-let dogsArray = ["Barney", "Molly", "Baxter", "Polly", "Buddy", "Suki", "Watson"];
+
 
 console.log("opgave 3a " + (dogsArray.includes('Trixie')));
 
@@ -67,29 +67,54 @@ console.log("opgave 3a " + (dogsArray.includes('Trixie')));
 
 console.log("opgave 3b " + (dogsArray.includes('Baxter')));
 
+//OPGAVE 4
+ //METHOD : find
 
 // OPGAVE 4a
 
 //TEST NEDENSTÅENDE
-console.log("opgave 4prøve " + (catsArray.includes('Bagheera')));
+//console.log("opgave 4prøve " + (catsArray.includes('Bagheera')));
 
 
-const result = catsArray.find(({ name }) => name === "Bagheera");
+const result = catsArray.find((cat) => cat === "Bagheera");
 
 console.log("opgave 4a", result);
+
 
 // OPGAVE 4b
 
 
+// function findcat(catsArray.find(({ name }) => name === "Salem")) {
+//     console.log("opgave 4b", );
+
+// } 
+
+/*
+function findCat() {
+    console.log("Debug: catsArray is", catsArray);
+return catsArray.find(cat => cat === "Salem");
+
+}
+        console.log("opgave 4b", findCat());
+*/
+
+// SIMPLERE UDGAVE UDEN FUNKTION
+console.log("opgave 4b", catsArray.find(cat => cat === "Salem"));
+
+// OPGAVE 5
+// METHOD : flatMap / map
+
+let newNumberArray = numbersArray.flatMap((x) => [x * 3]);
+
+console.log("opgave 5", newNumberArray);
 
 
+//OPGAVE 6
+/*Udskriv alle hundene i dogsArray i én lang streng.
 
+(Sådan her: BarneyMollyBaxter...)*/
 
-
-
-
-
-
+console.log("opgave 6 " + dogsArray.toString());
 
 
 
