@@ -110,14 +110,28 @@ console.log("opgave 5", newNumberArray);
 
 
 //OPGAVE 6
+// METHOD : join (toString, hvis kommaer skal bevares, forsøgte jeg først med)
 /*Udskriv alle hundene i dogsArray i én lang streng.
 
 (Sådan her: BarneyMollyBaxter...)*/
 
 console.log("opgave 6 " + dogsArray.toString());
+console.log("opgave 6 " + dogsArray.join(""));
 
 
+//Opgave 7
+// Opgave 7a
+console.log("Opgave 7a " + fruitsArray.indexOf('Mango'));
 
+//Opgave 7b
+
+console.log("Opgave 7b " + fruitsArray.indexOf('Blåbær'));
+
+// OPGAVE 8
+
+
+dogsArray.splice(3, 1);
+console.log("Opgave 8 ", dogsArray);
 
 
 
